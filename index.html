@@ -16,10 +16,10 @@
     <!-- Tailwind Css Link -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-[#f0fdf4]">
 
     <!-- Header -->
-     <header class="flex sm:items-center justify-between py-[20px] px-[7%] bg-[#15803d] text-[#fff] relative">
+     <header class="flex sm:items-center justify-between py-[20px] px-[5%] md:px-[7%] bg-[#15803d] text-[#fff] relative">
         <div class="logo flex items-center">
            <div class="icon md:hidden flex items-center">
              <i class="fa-solid fa-bars text-[20px] mr-2 cursor-pointer" id="navicon"></i>
@@ -38,7 +38,7 @@
 
 
      <!-- Main -->
-      <section class="w-full md:h-[380px] h-screen bg-[#cff0dc] px-[7%]">
+      <section class="w-full md:h-[380px] h-screen bg-[#cff0dc] px-[5%] md:px-[7%]">
         <div class="font-containar mx-auto flex items-center justify-center text-center h-full">
             <div class="font-content">
                 <h1 class="md:text-[48px] text-[30px] font-bold">Plant a Tree, Grow a Future</h1>
@@ -52,6 +52,36 @@
 
 
       <!-- section 2 -->
+       <section class="grid-section w-full px-[5%] md:px-[7%] py-5">
+            <div class="grid-section-containar">
+
+            </div>
+       </section>
+
+
+
+       <!-- Section 3 tree and text  -->
+
+       <section class="compaingn-section w-full md:px-[22%] px-[5%] py-5">
+            <h1 class="text-center font-bold text-[25px] mb-7">About the Campaign</h1>
+            <div class="compaingn-containar block md:flex items-center gap-4 ">
+                <div class="compaingn-img flex-1 md:mb-0 mb-6">
+                    <img src="./assets/about.png" alt="">
+                </div>
+                <div class="compaingn-text flex-1 text-xl ">
+                    <p class="mb-4">Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.</p>
+                    <ul class="list-disc pl-5">
+                        <li class="mb-2">Restoration of natural habitats</li>
+                        <li class="mb-2">Improvement of air quality</li>
+                        <li class="mb-2">Support for local communities</li>
+                    </ul>
+                </div>
+
+            </div>
+       </section>
+
+
+       
 
 
 
@@ -63,6 +93,7 @@
 
 
       <script src="./script.js"></script>
+    
     
 </body>
 </html>
