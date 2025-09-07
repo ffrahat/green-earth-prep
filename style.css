@@ -1,0 +1,15 @@
+
+.nav-shows{
+ 
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background-color: black;
+    opacity: 0.8;
+    width:70%;
+    height:100vh;
+    display:block;
+    z-index: 1;
+    padding:20px 7%;
+}
