@@ -13,3 +13,9 @@
     z-index: 1;
     padding:20px 7%;
 }
+
+.ct-btn-hover:hover{
+    color:#fff;
+    background-color: #15803d;
+    cursor:pointer;
+}
