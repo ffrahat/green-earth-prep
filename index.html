@@ -16,7 +16,7 @@
     <!-- Tailwind Css Link -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-[#f0fdf4]">
+<body class="bg-[#f0fdf4]  ">
 
     <!-- Header -->
      <header class="flex sm:items-center justify-between py-[20px] px-[5%] md:px-[7%] bg-[#15803d] text-[#fff] relative">
@@ -33,13 +33,13 @@
             <a class="block p-2 mr-8 text-[20px] md:mb-0 mb-2" href="">Plant a tree</a>
         </nav>
 
-        <button class="btn btn-active btn-success rounded-[20px] bg-[#facc15]">Plant a Tree</button>
+        <button class="btn btn-active btn-success rounded-[20px] md:rounded-[30px] bg-[#facc15] md:text-xl md:px-5 md:py-6">Plant a Tree</button>
      </header>
 
 
      <!-- Main -->
-      <section class="w-full md:h-[380px] h-screen bg-[#cff0dc] px-[5%] md:px-[7%]">
-        <div class="font-containar mx-auto flex items-center justify-center text-center h-full">
+      <section class="w-full md:h-[380px] h-[90vh] bg-[#cff0dc] px-[5%] md:px-[7%]">
+        <div class="font-containar mx-auto flex items-center justify-center text-center h-full md:bg-[url('./assets/hero-leaf1.png'),_url('./assets/hero-leaf2.png')]  bg-no-repeat md:[background-position:left_center,_right_center] bg-[url('./assets/hero-leaf2.png')] [background-position:right_bottom]">
             <div class="font-content">
                 <h1 class="md:text-[48px] text-[30px] font-bold">Plant a Tree, Grow a Future</h1>
                 <p class="my-3">Join our mission to plant 1 million trees and make the Earth greener for future
@@ -51,9 +51,35 @@
       </section>
 
 
-      <!-- section 2 -->
-       <section class="grid-section w-full px-[5%] md:px-[7%] py-5">
-            <div class="grid-section-containar">
+      <!-- section 2 Cart -->
+       <section class="cart-section w-full px-[5%] md:px-[7%] py-5">
+        <h1 class="text-center font-bold text-[25px] mb-7">Choose Your Trees</h1>
+            <div class="cart-containar flex gap-5">
+                <div class="cart-category w-[250px] border hidden ">
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                    <h1>All Category</h1>
+                </div>
+
+
+
+                <!-- cart  -->
+
+                <div class="main-cart rounded-lg w-full md:grid grid-cols-4 gap-5" id="parent-cart">
+                   
+                    <!-- Go to Js Grid cart -->
+
+                    <div class=" border cart-history col-start-4 col-end-5 md:row-start-1 md:row-span-[4] bg-[#FFF]">
+                        <p>This is cart history</p>
+                    </div>
+
+                </div>
 
             </div>
        </section>
@@ -84,7 +110,7 @@
 
 
        <!-- Section 4 Impect content  -->
-        <section class="impect-section w-full px-[5%] md:px-[7%] py-14 bg-[#bce7cd]">
+        <section class="impect-section w-full px-[5%] md:px-[7%] py-14 bg-[#bce7cd]  overflow-x-hidden">
              <h1 class="text-center font-bold text-[25px] mb-7">Our Impect</h1>
             <div class="impect-containar block md:grid grid-cols-3 gap-20">
                 <div class="impect-content bg-[#fff] rounded-xl p-10 md:mb-0 mb-5">
