@@ -56,63 +56,29 @@
         <h1 class="text-center font-bold text-[25px] mb-7">Choose Your Trees</h1>
             <div class="cart-containar md:flex gap-5">
                 <div class="cart-category md:w-[250px] mb-4">
-                     <h1 class="text-xl font-bold mb-2 flex space-x-2">Categories</h1>
-                       
-                    
+                     <h1 class="text-xl font-bold mb-2 flex space-x-2">Categories</h1>    
     
                     <div class="category-btns flex flex-wrap" id="categories-parent">
 
-                        <button class="md:w-full text-lg border md:border-none bg-transparent hover:bg-[#15803d] hover:text-[#fff] text-left p-2 mr-2 mb-2 ct-btn-hover ">All Trees</button>
+                        <button class="md:w-full text-lg border md:border-none bg-transparent hover:bg-[#15803d] hover:text-[#fff] text-left p-2 mr-2 mb-2 ct-btn-hover active" id="all-trees">All Trees</button>
                         
-                        <!-- Goes to Js File -->
-                         
+                        <!-- Goes to Js File -->    
                        
                     </div>
-
-                    
                 </div>
 
 
 
                 <!-- cart  -->
 
-                <div class="main-cart rounded-lg w-full md:grid grid-cols-4 gap-5 overflow-hidden" id="parent-cart">
+                <div class="main-cart rounded-lg w-full md:grid grid-cols-3 gap-5 overflow-hidden" id="parent-cart">
 
-                    <!-- cart made by rahat -->
-
-                    <div class="cart p-5 mb-5 bg-[#fff] rounded-lg">
-                        <div class="img">
-                            <img class="mx-auto w-full mb-3 h-[200px] object-cover rounded-lg" src="${fontPage.image}" alt="">
-                        </div> 
-                        <h1 class="mb-3 font-semibold text-2xl">${fontPage.name}</h1>
-                        <p class="mb-3">${fontPage.description}</p>
-                        
-                        <div class="category-price flex items-center justify-between mb-4">
-                            <div class="category">
-                                <p class="text-lg px-2 rounded-xl text-[#15803d] bg-[#dcfce7]">${fontPage.category}</p>
-                            </div>
-
-                            <div class="price">
-                                <p class="font-bold text-lg  text-[#15803d]"><span>${fontPage.price}</span> $</p>
-                            </div>
-                            
-                        </div>
-
-                        <button type="submit" class="btn btn-active btn-success rounded-[20px] bg-[#15803d] w-full p-5 border-none outline-none text-[#fff] add-to-cart">Add to Cart</button>
-
-
-                   </div>
-      
-
-
-
-                   
                     <!-- Go to Js Grid cart -->
 
-                    <div class=" border cart-history col-start-4 col-end-5 md:row-start-1 md:row-span-[4] bg-[#FFF]">
-                        <p>This is cart history</p>
-                    </div>
+                </div>
 
+                <div class="rounded-lg cart-history md:w-[350px] bg-[#FFF] p-4">
+                        <p class="font-semibold text-xl border-b-1">Add to Cart</p>
                 </div>
 
             </div>
