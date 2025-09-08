@@ -2,7 +2,7 @@
 
 const navIcon = document.getElementById("navicon");
 const navBar = document.getElementById("navbar");
-console.log(navBar);
+// console.log(navBar);
 
 navIcon.addEventListener("click", () => {
   console.log("clicked");
@@ -20,9 +20,94 @@ const loadAllPlants = () => {
     .then(res => res.json())
     .then(data => pushAllPlants(data))
 }
+
+
 const pushAllPlants = (allplantsdata) => {
-  console.log(allplantsdata.plants)
+  const plants = allplantsdata.plants
+
+  const slicesPlants = plants.slice(0, 9)
+  const parentCart = document.getElementById('parent-cart')
+  parentCart.innerHTML = ""
+  slicesPlants.forEach(slicePlant => {
+      const sliceCart = document.createElement('div');
+      sliceCart.innerHTML = `
+    
+    <!-- cart made by rahat -->
+
+                    <div class="cart p-5 mb-5 bg-[#fff] rounded-lg">
+                        <div class="img">
+                            <img class="mx-auto w-full mb-3 h-[200px] object-cover rounded-lg" src="${slicePlant.image}" alt="">
+                        </div> 
+                        <h1 class="mb-3 font-semibold text-2xl">${slicePlant.name}</h1>
+                        <p class="mb-3">${slicePlant.description}</p>
+                        
+                        <div class="category-price flex items-center justify-between mb-4">
+                            <div class="category">
+                                <p class="text-lg px-2 rounded-xl text-[#15803d] bg-[#dcfce7]">${slicePlant.category}</p>
+                            </div>
+
+                            <div class="price flex gap-1">
+                                <p class="font-bold text-lg  text-[#15803d]"><span class="flex-1">${slicePlant.price}</span></p>
+                                <span class="font-bold text-lg  text-[#15803d]">$</span>
+                            </div>
+                            
+                        </div>
+
+                        <button type="submit" class="btn btn-active btn-success rounded-[20px] bg-[#15803d] w-full p-5 border-none outline-none text-[#fff] add-to-cart">Add to Cart</button>
+
+
+                   </div>
+      
+    
+    `
+     parentCart.appendChild(sliceCart);
+  })
 }
+
+
+
+// Add to cart history 
+
+
+const blankArrey = []
+ 
+
+
+document.getElementById('parent-cart').addEventListener('click', (e) => {
+  if (e.target.classList.contains('add-to-cart')) {
+    const cart = e.target.parentNode;
+    const treesName = cart.children[1].innerText
+    const treesPrice = cart.children[3].children[1].children[0].innerText;
+    
+
+
+
+    const treesData = {
+      name: `${treesName}`,
+      price: `${treesPrice}`
+    }
+
+    
+
+    blankArrey.push(treesData)
+   console.log(blankArrey)
+
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -42,7 +127,7 @@ const allCategories = (categoriesData) => {
   const categoriesParent = document.getElementById('categories-parent')
   mainCategories.forEach(category => {
     const categoriesBtn = document.createElement('button')
-    console.log(category)
+    // console.log(category)
     categoriesBtn.className = "md:w-full btn-outline border md:text-lg md:border-none md:outline-none md:bg-transparent hover:bg-[#15803d] hover:text-[#fff] text-left p-2 mr-2 mb-2 text-[#000000] text-left ct-btn-hover"
     categoriesBtn.textContent = `${category.category_name}`
     categoriesBtn.onclick = () => categoryBtnClick(category.id)
