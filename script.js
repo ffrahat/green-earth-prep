@@ -24,6 +24,7 @@ const loadAllPlants = () => {
 
 const pushAllPlants = (allplantsdata) => {
   const plants = allplantsdata.plants
+  manageSpinner(true)
 
   const slicesPlants = plants.slice(0, 9)
   const parentCart = document.getElementById('parent-cart')
@@ -60,9 +61,16 @@ const pushAllPlants = (allplantsdata) => {
       
     
     `
-     parentCart.appendChild(sliceCart);
+    parentCart.appendChild(sliceCart);
+    
   })
+
+  manageSpinner(false) 
+
+  
 }
+
+
 
 
 
@@ -241,15 +249,13 @@ const childCreatedByCategories = (ctId) => {
 const manageSpinner = (status) => {
   if (status == true) {
     document.getElementById('spinner').classList.remove('hidden')
-    document.getElementById('containar').classList.add('hidden')
-    
+    // document.getElementById('parent-cart').classList.add('hidden')
+  } else {
+    document.getElementById('parent-cart').classList.remove('hidden')
+    // document.getElementById('spinner').classList.add('hidden')
   }
+
 }
-
-
-
-
-
 
 
 
