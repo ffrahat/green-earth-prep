@@ -70,6 +70,10 @@ const pushAllPlants = (allplantsdata) => {
 
 
 const blankArrey = []
+
+blankArrey.forEach(historyBlank => {
+  console.log(historyBlank)
+})
  
 
 
@@ -90,10 +94,37 @@ document.getElementById('parent-cart').addEventListener('click', (e) => {
     
 
     blankArrey.push(treesData)
-   console.log(blankArrey)
-
+    historyCreate(blankArrey)
   }
 });
+
+
+const historyCreate = (foundsArrey) => {
+  const cartHistory = document.getElementById('add-to-cart-history')
+  cartHistory.innerHTML = ""
+  foundsArrey.forEach(found => {
+    // const priceConverted = parseInt(found.price)
+    // console.log(priceConverted)
+    const cartHistoryChild = document.createElement('div')
+    cartHistoryChild.innerHTML = `
+    
+      <div class="cart-containar mt-4 p-4 bg-[#f0fdf4] rounded-lg w-full flex items-center justify-between">
+                                <div class="text-content">
+                                    <h1 class="font-semibold text-xl">${found.name}</h1>
+                                    <p class="text-gray-500 text-lg"><span>${found.price}</span> $</p>
+                                </div>
+
+                                <div class="icon">
+                                    <i class="fa-solid fa-xmark"></i>
+                                </div>
+                            </div>
+    
+    `
+
+    cartHistory.appendChild(cartHistoryChild)
+
+    })
+}
 
 
 
@@ -169,8 +200,9 @@ const childCreatedByCategories = (ctId) => {
                                 <p class="text-lg px-2 rounded-xl text-[#15803d] bg-[#dcfce7]">${plant.category}</p>
                             </div>
 
-                            <div class="price">
-                                <p class="font-bold text-lg  text-[#15803d]"><span>${plant.price}</span> $</p>
+                            <div class="price flex gap-1">
+                                <p class="font-bold text-lg  text-[#15803d]"><span>${plant.price}</span></p>
+                                <span class="font-bold text-lg  text-[#15803d]">$</span>
                             </div>
                             
                         </div>
