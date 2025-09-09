@@ -71,17 +71,20 @@ const pushAllPlants = (allplantsdata) => {
 
 const blankArrey = []
 
+
 blankArrey.forEach(historyBlank => {
   console.log(historyBlank)
 })
- 
 
+
+ 
 
 document.getElementById('parent-cart').addEventListener('click', (e) => {
   if (e.target.classList.contains('add-to-cart')) {
-    const cart = e.target.parentNode;
+    const cart = e.target.closest('.cart');
     const treesName = cart.children[1].innerText
     const treesPrice = cart.children[3].children[1].children[0].innerText;
+    // console.log(treesPrice)
     
 
 
@@ -91,7 +94,9 @@ document.getElementById('parent-cart').addEventListener('click', (e) => {
       price: `${treesPrice}`
     }
 
-    
+    const treesPrices = {
+      total: `${treesPrice}`
+    }
 
     blankArrey.push(treesData)
     historyCreate(blankArrey)
@@ -99,9 +104,16 @@ document.getElementById('parent-cart').addEventListener('click', (e) => {
 });
 
 
+
+
+
+
 const historyCreate = (foundsArrey) => {
+  totalPrice = 0;
   const cartHistory = document.getElementById('add-to-cart-history')
   cartHistory.innerHTML = ""
+  // Catch price
+  
   foundsArrey.forEach(found => {
     // const priceConverted = parseInt(found.price)
     // console.log(priceConverted)
@@ -123,18 +135,22 @@ const historyCreate = (foundsArrey) => {
 
     cartHistory.appendChild(cartHistoryChild)
 
+    const treesHistoryPricesConverted = parseInt(found.price);
+
+    // console.log(treesHistoryPricesConverted)
+    totalPrice += treesHistoryPricesConverted
+
+    catchPrice(totalPrice)
     })
+}
+
+function catchPrice(prices) {
+  // console.log(prices)
 }
 
 
 
-
-
-
-
-
-
-
+// Catch price
 
 
 
@@ -222,7 +238,13 @@ const childCreatedByCategories = (ctId) => {
 
 
 
-
+const manageSpinner = (status) => {
+  if (status == true) {
+    document.getElementById('spinner').classList.remove('hidden')
+    document.getElementById('containar').classList.add('hidden')
+    
+  }
+}
 
 
 
